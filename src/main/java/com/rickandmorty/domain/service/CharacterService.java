@@ -23,7 +23,7 @@ public class CharacterService {
     private final CharactersClient charactersClient;
 
     public Character save(Character character) {
-        if(characterRepositoryPort.findByName(character.getName()) != null || charactersClient.findAllCharacter().getResults().stream().anyMatch(item -> item.getName().equals(character.getName()))){
+        if (characterRepositoryPort.findByName(character.getName()) != null || charactersClient.findAllCharacter().getResults().stream().anyMatch(item -> item.getName().equals(character.getName()))) {
             throw new AlreadyApiException(CharacterNotificationCode.DATA_ALREADY_API);
         }
 

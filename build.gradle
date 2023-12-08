@@ -68,12 +68,8 @@ sourceSets {
 }
 
 test {
-	testLogging {
-		events "passed", "skipped", "failed"
-		exceptionFormat "full"
-	}
+	useJUnitPlatform()
 }
-
 jacoco {
 	toolVersion = "0.8.5"
 	reportsDir = file("$buildDir/reports/jacoco")
